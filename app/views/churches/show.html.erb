@@ -1,0 +1,16 @@
+
+<p style="color: green"><%= notice %></p>
+
+<%= render @church %>
+
+<div>
+  <%= link_to "Edit this church", edit_church_path(@church) %> |
+  <%= link_to "Back to churches", churches_path %>
+
+  <%= button_to "Destroy this church", @church, method: :delete %>
+</div>
+
+<iframe width="600" height="500" frameborder="0" style="border:0"
+ src="<%= 'https://www.google.com/maps/embed/v1/place?key=' + ENV["GMAPS_API_KEY"] + '&q=' + @church.latitude.to_s  + ',' + @church.longitude.to_s %>"
+ allowfullscreen>
+</iframe>

@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Churches</h1>
+
+<div id="churches">
+  <% @churches.each do |church| %>
+    <%= render church %>
+    <p>
+      <%= link_to "Show this church", church %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New church", new_church_path %>
+
+
+<p>
+ Using GeoCoder, we can add a search function to find the nearest church to a user
+https://github.com/alexreisner/geocoder#basic-search 
+</p>
